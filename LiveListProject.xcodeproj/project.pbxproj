@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8CCA4F20264DD9A4009F54EA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA4F1F264DD9A4009F54EA /* DetailView.swift */; };
 		8CF463C2264AEB110084CEB8 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF463C1264AEB110084CEB8 /* CountryModel.swift */; };
 		8CF463C5264AEEDC0084CEB8 /* CountryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF463C4264AEEDC0084CEB8 /* CountryController.swift */; };
 		8CF64AB62644BEE800606001 /* LiveListProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF64AB52644BEE800606001 /* LiveListProjectApp.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8CCA4F1F264DD9A4009F54EA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		8CF463C1264AEB110084CEB8 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		8CF463C4264AEEDC0084CEB8 /* CountryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryController.swift; sourceTree = "<group>"; };
 		8CF64AB22644BEE800606001 /* LiveListProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveListProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +39,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8CCA4F14264DD8A8009F54EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CF64AB72644BEE800606001 /* ContentView.swift */,
+				8CCA4F1F264DD9A4009F54EA /* DetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8CCA4F16264DD8BF009F54EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8CF463C1264AEB110084CEB8 /* CountryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8CCA4F18264DD8C9009F54EA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8CF463C4264AEEDC0084CEB8 /* CountryController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		8CF64AA92644BEE800606001 = {
 			isa = PBXGroup;
 			children = (
@@ -57,12 +84,12 @@
 			isa = PBXGroup;
 			children = (
 				8CF64AB52644BEE800606001 /* LiveListProjectApp.swift */,
-				8CF64AB72644BEE800606001 /* ContentView.swift */,
+				8CCA4F16264DD8BF009F54EA /* Model */,
+				8CCA4F14264DD8A8009F54EA /* Views */,
+				8CCA4F18264DD8C9009F54EA /* Controllers */,
 				8CF64AB92644BEED00606001 /* Assets.xcassets */,
 				8CF64ABE2644BEED00606001 /* Info.plist */,
 				8CF64ABB2644BEED00606001 /* Preview Content */,
-				8CF463C1264AEB110084CEB8 /* CountryModel.swift */,
-				8CF463C4264AEEDC0084CEB8 /* CountryController.swift */,
 			);
 			path = LiveListProject;
 			sourceTree = "<group>";
@@ -147,6 +174,7 @@
 				8CF64AB82644BEE800606001 /* ContentView.swift in Sources */,
 				8CF64AB62644BEE800606001 /* LiveListProjectApp.swift in Sources */,
 				8CF463C5264AEEDC0084CEB8 /* CountryController.swift in Sources */,
+				8CCA4F20264DD9A4009F54EA /* DetailView.swift in Sources */,
 				8CF463C2264AEB110084CEB8 /* CountryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
