@@ -10,20 +10,27 @@ import SwiftUI
 struct ContentView: View {
     var countryController = CountryController()
     var body: some View {
+        NavigationView{
         List(countryController.countries) { country in
                        NavigationLink(destination: DetailView(country: country)) {
                            Text(country.name)
                        }
                            
                    }
-                   .navigationBarTitle("Countries", displayMode: .inline)
-               }
+                    .navigationBarTitle("Countries", displayMode: .inline)
+        
+                .navigationBarItems(
+                    trailing:NavigationLink(destination:
+                    AddCountryView(cityName: "Country")) {
+                        Image(systemName: "plus").foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                        }
+                )
+               } //Nav view
     }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView{
             ContentView()
-        }
     }
 }
