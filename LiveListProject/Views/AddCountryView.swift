@@ -9,8 +9,11 @@ import SwiftUI
 
 struct AddCountryView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    @EnvironmentObject var countryController: CountryController
+//    @EnvironmentObject var countryController: CountryController
+    @ObservedObject var countryController: CountryController
+
     
     @State var countryName: String = ""
     @State var population: String = ""
@@ -40,17 +43,18 @@ struct AddCountryView: View {
             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1.0))
             
             HStack {
-                Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
-                    Text("Cancel")
-                }
-                .padding(.all)
-                .padding(.horizontal)
-                .foregroundColor(.white)
-                .background(Color.blue)
-                .cornerRadius(7.0)
+                Button("Cancel") {
+                                   presentationMode.wrappedValue.dismiss()
+                               }
+                               .padding(.all)
+                               .padding(.horizontal)
+                               .foregroundColor(.white)
+                               .background(Color.blue)
+                               .cornerRadius(7.0)
                 
                 Button(action: {
                     countryController.addCountry(newCountry: CountryModel(id: UUID(), name: countryName, population: population))
+                    presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Add Country")
                 }
@@ -71,6 +75,6 @@ struct AddCountryView: View {
 
 struct AddCountryView_Previews: PreviewProvider {
     static var previews: some View {
-        AddCountryView()
+        AddCountryView(countryController: CountryController())
     }
 }

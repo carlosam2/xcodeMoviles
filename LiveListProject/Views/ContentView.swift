@@ -13,20 +13,23 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView{
-        List(countryController.countries) { country in
-                       NavigationLink(destination: DetailView(country: country)) {
-                           Text(country.name)
-                       }
-                           
-                   }
-                    .navigationBarTitle("Countries", displayMode: .inline)
-        
+            List {
+                ForEach(countryController.countries){ country in
+                NavigationLink(destination: DetailView(country: country)) {
+                Text(country.name)
+                    }}.onDelete(perform: deleteItem)
+                }
+                .navigationBarTitle("Countries", displayMode: .inline)
                 .navigationBarItems(
                     trailing:NavigationLink(
-                    destination: AddCountryView().environmentObject(countryController)) {
+                    destination: AddCountryView(countryController: countryController).environmentObject(countryController)) {
                             Image(systemName: "plus").foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                         })} //Nav view
     }
+    
+    private func deleteItem(at indexSet: IndexSet) {
+           self.countryController.countries.remove(atOffsets: indexSet)
+       }
 }
 
 struct ContentView_Previews: PreviewProvider {
